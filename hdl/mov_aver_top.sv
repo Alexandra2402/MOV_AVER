@@ -22,7 +22,7 @@ logic fifo_rd_en;
 logic complete;
 logic state_fl;
 logic [31:0] acc = 0;
-logic [32:0] sum = 0;
+logic [31:0] sum = 0;
 logic [31:0] sub = 0;
 logic [31:0] fifo_data = 0;
 logic fifo_last;
