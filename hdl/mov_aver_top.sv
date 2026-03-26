@@ -1,4 +1,6 @@
-module mov_aver_top (
+module mov_aver_top #(
+    parameter integer FFT_SIZE = 4096
+    )(
     input logic clk,
     input logic resetn,
     input logic [31:0] data_i,
@@ -15,7 +17,6 @@ typedef enum {IDLE, CALC, FINISH} state_type;
 state_type state;
 state_type state_next;
 
-localparam FFT_SIZE = 4096;
 logic [12:0] data_cnt = 0;
 logic fifo_wr_en;
 logic fifo_rd_en;
@@ -27,6 +28,13 @@ logic [31:0] sub = 0;
 logic [31:0] fifo_data = 0;
 logic fifo_last;
 logic [3:0] fifo_last_delayed;
+logic [31:0] div_data;
+logic div_last;
+logic div_vl;
+
+assign data_o = (avg_win_size == 0) ? data_i : div_data;
+assign last_o = (avg_win_size == 0) ? last_i : div_last;
+assign vl_o = (avg_win_size == 0) ? vl_i : div_vl;
 
 input_fifo input_fifo_u
 (
@@ -50,14 +58,14 @@ divider divider_u
     .aclk(clk),
     .s_axis_divisor_tvalid(),
     .s_axis_divisor_tready(),
-    .s_axis_divisor_tdata(sum),
+    .s_axis_divisor_tdata(avg_win_size),
     .s_axis_dividend_tvalid(),
     .s_axis_dividend_tready(), 
     .s_axis_dividend_tlast (),
-    .s_axis_dividend_tdata (),
-    .m_axis_dout_tvalid (),
-    .m_axis_dout_tlast (),
-    .m_axis_dout_tdata ()
+    .s_axis_dividend_tdata (sum),
+    .m_axis_dout_tvalid (div_vl),
+    .m_axis_dout_tlast (div_last),
+    .m_axis_dout_tdata (div_data)
   );
 
 always_ff @(posedge clk) begin
@@ -98,8 +106,20 @@ always_comb begin
     case (state)
         IDLE: begin
             if (EN) begin
+                if (avg_win_size != 0) begin
                 state_next = CALC;
                 fifo_wr_en = 1;
+                fifo_rd_en = 0;
+                end
+                else begin
+                    state_next = IDLE;
+                    fifo_wr_en = 0;
+                    fifo_rd_en = 0;
+                end
+            end
+            else begin
+                state_next = IDLE;
+                fifo_wr_en = 0;
                 fifo_rd_en = 0;
             end
         end
@@ -110,10 +130,8 @@ always_comb begin
                 if (data_cnt <= FFT_SIZE-avg_win_size-1) /// ?
                     fifo_wr_en = 0;
                 state_next = CALC;
-                // state_fl = 0;
             end
             else begin
-                // state_fl = 1;
                 state_next = FINISH;
                 fifo_rd_en = 0;
                 fifo_wr_en = 0;
