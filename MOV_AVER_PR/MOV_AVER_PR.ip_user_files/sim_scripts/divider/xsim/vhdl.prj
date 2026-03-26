@@ -1,0 +1,5 @@
+vhdl xil_defaultlib  \
+"../../../../MOV_AVER_PR.gen/sources_1/ip/divider/sim/divider.vhd" \
+
+# Do not sort compile order
+nosort
