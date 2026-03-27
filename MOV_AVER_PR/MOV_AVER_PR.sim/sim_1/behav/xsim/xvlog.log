@@ -1,0 +1,4 @@
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/alex/HDL_PROJECTS/MOV_AVER/hdl/mov_aver_top.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module mov_aver_top
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/alex/HDL_PROJECTS/MOV_AVER/tb/mov_aver_tb.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module mov_aver_tb

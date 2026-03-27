@@ -1,0 +1,13 @@
+# compile verilog/system verilog design source files
+verilog xil_defaultlib  \
+"../../../../MOV_AVER_PR.gen/sources_1/ip/input_fifo/sim/input_fifo.v" \
+
+sv xil_defaultlib  \
+"../../../../../hdl/mov_aver_top.sv" \
+"../../../../../tb/mov_aver_tb.sv" \
+
+# compile glbl module
+verilog xil_defaultlib "glbl.v"
+
+# Do not sort compile order
+nosort

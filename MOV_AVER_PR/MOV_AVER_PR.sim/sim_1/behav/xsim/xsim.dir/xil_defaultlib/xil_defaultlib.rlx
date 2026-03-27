@@ -1,0 +1,8 @@
+0.7
+2020.2
+Oct 13 2023
+20:21:30
+/home/alex/HDL_PROJECTS/MOV_AVER/MOV_AVER_PR/MOV_AVER_PR.gen/sources_1/ip/input_fifo/sim/input_fifo.v,1774515319,verilog,,,,input_fifo,,uvm,,,,,,
+/home/alex/HDL_PROJECTS/MOV_AVER/MOV_AVER_PR/MOV_AVER_PR.sim/sim_1/behav/xsim/glbl.v,1697210495,verilog,,,,glbl,,uvm,,,,,,
+/home/alex/HDL_PROJECTS/MOV_AVER/hdl/mov_aver_top.sv,1774625179,systemVerilog,,/home/alex/HDL_PROJECTS/MOV_AVER/tb/mov_aver_tb.sv,,mov_aver_top,,uvm,,,,,,
+/home/alex/HDL_PROJECTS/MOV_AVER/tb/mov_aver_tb.sv,1774624283,systemVerilog,,,,mov_aver_tb,,uvm,,,,,,

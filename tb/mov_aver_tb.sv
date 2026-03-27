@@ -1,6 +1,6 @@
 `timescale 1ns/1ps
 
-module mov_aver_td ();
+module mov_aver_tb ();
 
     logic clk = 0;
     logic resetn;
@@ -20,18 +20,27 @@ module mov_aver_td ();
     mov_aver_top DUT (.*);
 
     initial begin
-        resetn = 0;
+         resetn = 0;
         #10
         resetn = 1;
+        #10
+        last_i = 10;
+        avg_win_size = $urandom_range(255,0);
+        EN = 0;
+        vl_i = 0;
+        #10
+        EN = 1;
+        #20
         repeat(FFT_SIZE) begin
-            EN = 0;
-            vl_i = 0;
-            #10
-            EN = 1;
-            #20
-            data_i = $urandom_range(65535,0);
-            vl_i = 1;
+        @(posedge clk)
+        data_i = $urandom_range(65535,0);
+        vl_i = 1;
         end
+        last_i = 1;
+        vl_i = 0;
+        EN = 0;
+        #10
+        last_i = 0;
     end
 
 endmodule
