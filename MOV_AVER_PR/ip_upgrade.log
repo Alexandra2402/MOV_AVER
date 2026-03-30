@@ -1,0 +1,37 @@
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
+---------------------------------------------------------------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2024.2 (win64) Build 5239630 Fri Nov 08 22:35:27 MST 2024
+| Date         : Sun Mar 29 10:50:31 2026
+| Host         : DESKTOP-K7UJ3O4 running 64-bit major release  (build 9200)
+| Command      : upgrade_ip
+| Device       : xczu15eg-ffvb1156-2-i
+---------------------------------------------------------------------------------------------------------------------------------------------
+
+Upgrade Log for IP 'input_fifo'
+
+1. Summary
+----------
+
+SUCCESS in the upgrade of input_fifo (xilinx.com:ip:fifo_generator:13.2) from (Rev. 9) to (Rev. 11)
+
+
+
+
+
+
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
+---------------------------------------------------------------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2024.2 (win64) Build 5239630 Fri Nov 08 22:35:27 MST 2024
+| Date         : Sun Mar 29 10:50:31 2026
+| Host         : DESKTOP-K7UJ3O4 running 64-bit major release  (build 9200)
+| Command      : upgrade_ip
+| Device       : xczu15eg-ffvb1156-2-i
+---------------------------------------------------------------------------------------------------------------------------------------------
+
+Upgrade Log for IP 'divider'
+
+1. Summary
+----------
+
+SUCCESS in the upgrade of divider (xilinx.com:ip:div_gen:5.1) from (Rev. 20) to (Rev. 23)
+

@@ -1,0 +1,156 @@
+m255
+K4
+z2
+!s11f MIXED_VERSIONS
+!s11e vcom 2024.1 2024.02, Feb  1 2024
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 dC:/Viv_prj24.2/MOV_AVER/MOV_AVER_PR/MOV_AVER_PR.sim/sim_1/behav/questa
+Edivider
+Z1 w1774853187
+Z2 DPx15 div_gen_v5_1_23 24 div_gen_v5_1_23_viv_comp 0 22 VBz33a^jU8jIIRS<:kf[]3
+Z3 DPx18 xbip_utils_v3_0_14 22 xbip_utils_v3_0_14_pkg 0 22 98^PP>hPCP?9KDMZ68MBe1
+DEx15 div_gen_v5_1_23 15 div_gen_v5_1_23 0 22 Q:QKe_7m450RLdOE<Qi453
+Z4 DPx4 ieee 11 numeric_std 0 22 aU^R8eGcicLcUFIaBQSL>3
+Z5 DPx3 std 6 textio 0 22 zE1`LPoLg^DX3Oz^4Fj1K3
+Z6 DPx4 ieee 14 std_logic_1164 0 22 cVAk:aDinOX8^VGI1ekP<3
+!i122 0
+R0
+Z7 8../../../../MOV_AVER_PR.gen/sources_1/ip/divider/sim/divider.vhd
+Z8 F../../../../MOV_AVER_PR.gen/sources_1/ip/divider/sim/divider.vhd
+l0
+L59 1
+Vb6:LXGi2ADb0fTH?QdFIX0
+!s100 >C@JOMAn=oMN;nI;a[`<o2
+Z9 OL;C;2024.1;79
+31
+Z10 !s110 1774853889
+!i10b 1
+Z11 !s108 1774853889.000000
+Z12 !s90 -93|-work|xil_defaultlib|../../../../MOV_AVER_PR.gen/sources_1/ip/divider/sim/divider.vhd|
+Z13 !s107 ../../../../MOV_AVER_PR.gen/sources_1/ip/divider/sim/divider.vhd|
+!i113 0
+Z14 o-93 -work xil_defaultlib
+Z15 tExplicit 1 CvgOpt 0
+Adivider_arch
+R2
+R3
+R4
+R5
+R6
+DEx4 work 7 divider 0 22 b6:LXGi2ADb0fTH?QdFIX0
+!i122 0
+l148
+L75 121
+Vz<NT6T>NnnOHgQ1n>;?JY2
+!s100 FJDA7@Sca]1VZzcI5Xl2`3
+R9
+31
+R10
+!i10b 1
+R11
+R12
+R13
+!i113 0
+R14
+R15
+vglbl
+2glbl.v
+R10
+!i10b 1
+!s100 TL<1YD8i05Z]RjCH=O^Cf3
+IEIl9nCH7KnQHNU=hnG=VH2
+R0
+w1724786425
+8glbl.v
+Fglbl.v
+!i122 3
+L0 6 78
+Z16 VDg1SIo80bB@j0V0VzS_@n1
+Z17 OL;L;2024.1;79
+r1
+!s85 0
+31
+R11
+!s107 glbl.v|
+!s90 -work|xil_defaultlib|glbl.v|
+!i113 0
+o-work xil_defaultlib -L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
+Z18 tCvgOpt 0
+vinput_fifo
+2../../../../MOV_AVER_PR.gen/sources_1/ip/input_fifo/sim/input_fifo.v
+R10
+!i10b 1
+!s100 9CUhS7^WHB35Ri=NSTzVX3
+Il]46XE?na9^D_JM6WD?1B2
+R0
+w1774770812
+8../../../../MOV_AVER_PR.gen/sources_1/ip/input_fifo/sim/input_fifo.v
+F../../../../MOV_AVER_PR.gen/sources_1/ip/input_fifo/sim/input_fifo.v
+!i122 1
+L0 56 475
+R16
+R17
+r1
+!s85 0
+31
+R11
+!s107 ../../../../MOV_AVER_PR.gen/sources_1/ip/input_fifo/sim/input_fifo.v|
+!s90 -incr|-mfcu|-work|xil_defaultlib|../../../../MOV_AVER_PR.gen/sources_1/ip/input_fifo/sim/input_fifo.v|
+!i113 0
+o-mfcu -work xil_defaultlib -L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
+R18
+vmov_aver_tb
+Z19 2../../../../../hdl/mov_aver_top.sv|../../../../../tb/mov_aver_tb.sv
+Z20 DXx6 sv_std 3 std 0 22 9oUSJO;AeEaW`l:M@^WG92
+R10
+!i10b 1
+!s100 D01oL3UlT^hKcD9>3g9^g3
+I4VSRUo:C=aMCR=^MJYe;l3
+S1
+R0
+w1774773456
+8../../../../../tb/mov_aver_tb.sv
+F../../../../../tb/mov_aver_tb.sv
+!i122 2
+L0 3 46
+R16
+R17
+r1
+!s85 0
+31
+R11
+Z21 !s107 ../../../../../tb/mov_aver_tb.sv|../../../../../hdl/mov_aver_top.sv|
+Z22 !s90 -incr|-mfcu|-sv|-work|xil_defaultlib|../../../../../hdl/mov_aver_top.sv|../../../../../tb/mov_aver_tb.sv|
+!i113 0
+Z23 o-mfcu -sv -work xil_defaultlib -L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
+R18
+vmov_aver_top
+R19
+R20
+R10
+!i10b 1
+!s100 GVfK6lV:d87o^LHI?N2Fi2
+IV;cAKX;^QS7YRGCJ9`9dB1
+S1
+R0
+w1774808855
+8../../../../../hdl/mov_aver_top.sv
+F../../../../../hdl/mov_aver_top.sv
+!i122 2
+L0 1 197
+R16
+R17
+r1
+!s85 0
+31
+R11
+R21
+R22
+!i113 0
+R23
+R18

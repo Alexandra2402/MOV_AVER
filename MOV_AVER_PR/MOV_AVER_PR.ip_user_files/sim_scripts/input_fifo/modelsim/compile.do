@@ -2,30 +2,30 @@ vlib modelsim_lib/work
 vlib modelsim_lib/msim
 
 vlib modelsim_lib/msim/xpm
-vlib modelsim_lib/msim/fifo_generator_v13_2_9
+vlib modelsim_lib/msim/fifo_generator_v13_2_11
 vlib modelsim_lib/msim/xil_defaultlib
 
 vmap xpm modelsim_lib/msim/xpm
-vmap fifo_generator_v13_2_9 modelsim_lib/msim/fifo_generator_v13_2_9
+vmap fifo_generator_v13_2_11 modelsim_lib/msim/fifo_generator_v13_2_11
 vmap xil_defaultlib modelsim_lib/msim/xil_defaultlib
 
-vlog -work xpm -64 -incr -mfcu  -sv \
-"/tools/Xilinx/Vivado/2023.2/data/ip/xpm/xpm_cdc/hdl/xpm_cdc.sv" \
-"/tools/Xilinx/Vivado/2023.2/data/ip/xpm/xpm_memory/hdl/xpm_memory.sv" \
+vlog -work xpm  -incr -mfcu  -sv \
+"C:/Xilinx24.2/Vivado/2024.2/data/ip/xpm/xpm_cdc/hdl/xpm_cdc.sv" \
+"C:/Xilinx24.2/Vivado/2024.2/data/ip/xpm/xpm_memory/hdl/xpm_memory.sv" \
 
-vcom -work xpm -64 -93  \
-"/tools/Xilinx/Vivado/2023.2/data/ip/xpm/xpm_VCOMP.vhd" \
+vcom -work xpm  -93  \
+"C:/Xilinx24.2/Vivado/2024.2/data/ip/xpm/xpm_VCOMP.vhd" \
 
-vlog -work fifo_generator_v13_2_9 -64 -incr -mfcu  \
+vlog -work fifo_generator_v13_2_11  -incr -mfcu  \
 "../../../ipstatic/simulation/fifo_generator_vlog_beh.v" \
 
-vcom -work fifo_generator_v13_2_9 -64 -93  \
+vcom -work fifo_generator_v13_2_11  -93  \
 "../../../ipstatic/hdl/fifo_generator_v13_2_rfs.vhd" \
 
-vlog -work fifo_generator_v13_2_9 -64 -incr -mfcu  \
+vlog -work fifo_generator_v13_2_11  -incr -mfcu  \
 "../../../ipstatic/hdl/fifo_generator_v13_2_rfs.v" \
 
-vlog -work xil_defaultlib -64 -incr -mfcu  \
+vlog -work xil_defaultlib  -incr -mfcu  \
 "../../../../MOV_AVER_PR.gen/sources_1/ip/input_fifo/sim/input_fifo.v" \
 
 vlog -work xil_defaultlib \

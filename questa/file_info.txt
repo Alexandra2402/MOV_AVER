@@ -1,0 +1,5 @@
+divider.vhd,vhdl,xil_defaultlib,../MOV_AVER_PR/MOV_AVER_PR.gen/sources_1/ip/divider/sim/divider.vhd,
+input_fifo.v,verilog,xil_defaultlib,../MOV_AVER_PR/MOV_AVER_PR.gen/sources_1/ip/input_fifo/sim/input_fifo.v,
+mov_aver_top.sv,systemverilog,xil_defaultlib,../hdl/mov_aver_top.sv,
+mov_aver_tb.sv,systemverilog,xil_defaultlib,../tb/mov_aver_tb.sv,
+glbl.v,Verilog,xil_defaultlib,glbl.v

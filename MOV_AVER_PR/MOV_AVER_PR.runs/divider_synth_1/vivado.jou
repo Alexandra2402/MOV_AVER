@@ -1,14 +1,24 @@
 #-----------------------------------------------------------
-# Vivado v2023.2 (64-bit)
-# SW Build 4029153 on Fri Oct 13 20:13:54 MDT 2023
-# IP Build 4028589 on Sat Oct 14 00:45:43 MDT 2023
-# SharedData Build 4025554 on Tue Oct 10 17:18:54 MDT 2023
-# Start of session at: Thu Mar 26 13:24:19 2026
-# Process ID: 156956
-# Current directory: /home/alex/HDL_PROJECTS/MOV_AVER/MOV_AVER_PR/MOV_AVER_PR.runs/divider_synth_1
-# Command line: vivado -log divider.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source divider.tcl
-# Log file: /home/alex/HDL_PROJECTS/MOV_AVER/MOV_AVER_PR/MOV_AVER_PR.runs/divider_synth_1/divider.vds
-# Journal file: /home/alex/HDL_PROJECTS/MOV_AVER/MOV_AVER_PR/MOV_AVER_PR.runs/divider_synth_1/vivado.jou
-# Running On: alex-virtual-machine, OS: Linux, CPU Frequency: 3696.012 MHz, CPU Physical cores: 8, Host memory: 16729 MB
+# Vivado v2024.2 (64-bit)
+# SW Build 5239630 on Fri Nov 08 22:35:27 MST 2024
+# IP Build 5239520 on Sun Nov 10 16:12:51 MST 2024
+# SharedData Build 5239561 on Fri Nov 08 14:39:27 MST 2024
+# Start of session at: Mon Mar 30 21:47:54 2026
+# Process ID         : 4664
+# Current directory  : C:/Viv_prj24.2/MOV_AVER/MOV_AVER_PR/MOV_AVER_PR.runs/divider_synth_1
+# Command line       : vivado.exe -log divider.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source divider.tcl
+# Log file           : C:/Viv_prj24.2/MOV_AVER/MOV_AVER_PR/MOV_AVER_PR.runs/divider_synth_1/divider.vds
+# Journal file       : C:/Viv_prj24.2/MOV_AVER/MOV_AVER_PR/MOV_AVER_PR.runs/divider_synth_1\vivado.jou
+# Running On         : DESKTOP-K7UJ3O4
+# Platform           : Windows Server 2016 or Windows 10
+# Operating System   : 22631
+# Processor Detail   : AMD Ryzen 7 H 260 w/ Radeon 780M Graphics 
+# CPU Frequency      : 3793 MHz
+# CPU Physical cores : 8
+# CPU Logical cores  : 16
+# Host memory        : 33618 MB
+# Swap memory        : 5100 MB
+# Total Virtual      : 38718 MB
+# Available Virtual  : 22945 MB
 #-----------------------------------------------------------
 source divider.tcl -notrace

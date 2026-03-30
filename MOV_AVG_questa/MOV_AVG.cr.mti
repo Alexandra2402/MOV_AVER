@@ -1,0 +1,54 @@
+C:/Viv_prj24.2/MOV_AVER/ip/divider/sim/divider.vhd {1 {vcom -work work -2002 -explicit -vopt -stats=none C:/Viv_prj24.2/MOV_AVER/ip/divider/sim/divider.vhd
+QuestaSim-64 vcom 2024.1 Compiler 2024.02 Feb  1 2024
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package NUMERIC_STD
+-- Compiling entity divider
+-- Compiling architecture divider_arch of divider
+
+} {} {}} C:/Viv_prj24.2/MOV_AVER/ip/input_fifo/sim/input_fifo.v {1 {vlog -work work -vopt -stats=none C:/Viv_prj24.2/MOV_AVER/ip/input_fifo/sim/input_fifo.v
+QuestaSim-64 vlog 2024.1 Compiler 2024.02 Feb  1 2024
+-- Compiling module input_fifo
+
+Top level modules:
+	input_fifo
+
+} {} {}} C:/Viv_prj24.2/MOV_AVER/ip/input_fifo/simulation/fifo_generator_vlog_beh.v {1 {vlog -work work -vopt -stats=none C:/Viv_prj24.2/MOV_AVER/ip/input_fifo/simulation/fifo_generator_vlog_beh.v
+QuestaSim-64 vlog 2024.1 Compiler 2024.02 Feb  1 2024
+-- Compiling module fifo_generator_vlog_beh
+-- Compiling module fifo_generator_v13_2_9_CONV_VER
+-- Compiling module fifo_generator_v13_2_9_sync_stage
+-- Compiling module fifo_generator_v13_2_9_bhv_ver_as
+-- Compiling module fifo_generator_v13_2_9_beh_ver_ll_afifo
+-- Compiling module fifo_generator_v13_2_9_bhv_ver_ss
+-- Compiling module fifo_generator_v13_2_9_bhv_ver_preload0
+-- Compiling module fifo_generator_v13_2_9_axic_reg_slice
+
+Top level modules:
+	fifo_generator_vlog_beh
+
+} {} {}} C:/Viv_prj24.2/MOV_AVER/ip/divider/hdl/xbip_utils_v3_0_vh_rfs.vhd {1 {vcom -work work -2002 -explicit -vopt -stats=none C:/Viv_prj24.2/MOV_AVER/ip/divider/hdl/xbip_utils_v3_0_vh_rfs.vhd
+QuestaSim-64 vcom 2024.1 Compiler 2024.02 Feb  1 2024
+-- Loading package STANDARD
+
+} {} {}} C:/Viv_prj24.2/MOV_AVER/hdl/mov_aver_top.sv {1 {vlog -work work -vopt -sv -stats=none C:/Viv_prj24.2/MOV_AVER/hdl/mov_aver_top.sv
+QuestaSim-64 vlog 2024.1 Compiler 2024.02 Feb  1 2024
+-- Compiling module mov_aver_top
+
+Top level modules:
+	mov_aver_top
+
+} {} {}} C:/Viv_prj24.2/MOV_AVER/ip/input_fifo/hdl/fifo_generator_v13_2_rfs.v {1 {vlog -work work -vopt -stats=none C:/Viv_prj24.2/MOV_AVER/ip/input_fifo/hdl/fifo_generator_v13_2_rfs.v
+QuestaSim-64 vlog 2024.1 Compiler 2024.02 Feb  1 2024
+
+Top level modules:
+
+} {} {}} C:/Viv_prj24.2/MOV_AVER/tb/mov_aver_tb.sv {1 {vlog -work work -vopt -sv -stats=none C:/Viv_prj24.2/MOV_AVER/tb/mov_aver_tb.sv
+QuestaSim-64 vlog 2024.1 Compiler 2024.02 Feb  1 2024
+-- Compiling module mov_aver_tb
+
+Top level modules:
+	mov_aver_tb
+
+} {} {}}

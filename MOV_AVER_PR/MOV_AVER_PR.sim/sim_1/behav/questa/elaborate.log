@@ -1,0 +1,51 @@
+# do {mov_aver_tb_elaborate.do}
+# QuestaSim-64 vopt 2024.1 Compiler 2024.02 Feb  1 2024
+# ** Warning: (vopt-10587) Some optimizations are turned off because the +acc switch is in effect. This will cause your simulation to run slowly. Please use -access/-debug to maintain needed visibility.
+# Start time: 09:58:11 on Mar 30,2026
+# vopt "+acc=npr" -suppress 10016 -L xil_defaultlib -L xbip_utils_v3_0_14 -L axi_utils_v2_0_10 -L xbip_pipe_v3_0_10 -L xbip_dsp48_wrapper_v3_0_6 -L mult_gen_v12_0_22 -L floating_point_v7_0_24 -L div_gen_v5_1_23 -L fifo_generator_v13_2_11 -L unisims_ver -L unimacro_ver -L secureip -L xpm -work xil_defaultlib xil_defaultlib.mov_aver_tb xil_defaultlib.glbl -o mov_aver_tb_opt 
+# 
+# Top level modules:
+# 	mov_aver_tb
+# 	glbl
+# Support of the MGLS_LICENSE_FILE and LM_LICENSE_FILE licensing environment variables will be discontinued starting with the 2025.1 release. Please update to using the SALT_LICENSE_SERVER variable.
+# Please contact Siemens EDA Customer Support (https://support.sw.siemens.com/) for assistance.
+# 
+# Analyzing design...
+# -- Loading module mov_aver_tb
+# -- Loading module glbl
+# -- Loading module mov_aver_top
+# -- Loading module input_fifo
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Loading entity divider
+# -- Loading architecture divider_arch of divider
+# -- Loading module fifo_generator_v13_2_11.fifo_generator_vlog_beh
+# -- Loading module fifo_generator_v13_2_11.fifo_generator_v13_2_11_CONV_VER
+# -- Loading module fifo_generator_v13_2_11.fifo_generator_v13_2_11_bhv_ver_ss
+# -- Loading module fifo_generator_v13_2_11.fifo_generator_v13_2_11_bhv_ver_preload0
+# -- Loading architecture DSP48E2_V of DSP48E2
+# -- Loading package body VPKG
+# -- Loading module unisims_ver.DSP58
+# -- Loading architecture MUXCY_V of MUXCY
+# -- Loading architecture XORCY_V of XORCY
+# -- Loading architecture FDE_V of FDE
+# -- Loading architecture FDRE_V of FDRE
+# ** Error (suppressible): ../../../../../hdl/mov_aver_top.sv(41): (vopt-2912) Port 'axis_prog_full_thresh' not found in module 'input_fifo' (9th connection).
+# ** Error (suppressible): ../../../../../hdl/mov_aver_top.sv(41): (vopt-2912) Port 'axis_prog_full' not found in module 'input_fifo' (11th connection).
+# Optimization failed
+# End time: 09:58:12 on Mar 30,2026, Elapsed time: 0:00:01
+# Errors: 2, Warnings: 1
+# ** Error: C:/questasim64_2024.1/win64/vopt failed.
+# Error in macro ./mov_aver_tb_elaborate.do line 9
+# Return status = 2
+#     (procedure "compile" line 7)
+#     invoked from within
+# "compile NoFilter vopt +acc=npr -suppress 10016 -L xil_defaultlib -L xbip_utils_v3_0_14 -L axi_utils_v2_0_10 -L xbip_pipe_v3_0_10 -L xbip_dsp48_wrapper..."
+#     ("eval" body line 1)
+#     invoked from within
+# "eval compile NoFilter vopt $flow $args"
+#     (procedure "vopt" line 24)
+#     invoked from within
+# "vopt +acc=npr -suppress 10016 -L xil_defaultlib -L xbip_utils_v3_0_14 -L axi_utils_v2_0_10 -L xbip_pipe_v3_0_10 -L xbip_dsp48_wrapper_v3_0_6 -L mult_g..."

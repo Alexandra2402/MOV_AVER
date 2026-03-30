@@ -8,7 +8,7 @@ module mov_aver_tb ();
     logic vl_i;
     logic last_i;
     logic EN;
-    logic [7:0] avg_win_size;
+    logic [7:0] avg_win_size_i;
     logic [31:0] data_o;
     logic vl_o;
     logic last_o;
@@ -20,27 +20,55 @@ module mov_aver_tb ();
     mov_aver_top DUT (.*);
 
     initial begin
-         resetn = 0;
-        #10
+        vl_i = 0;
+        data_i = 32'd4294963199;
+        resetn = 0;
+        #1000
         resetn = 1;
-        #10
+        #1000
         last_i = 10;
-        avg_win_size = $urandom_range(255,0);
+        avg_win_size_i = 0;//$urandom_range(255,0);
         EN = 0;
         vl_i = 0;
         #10
         EN = 1;
         #20
-        repeat(FFT_SIZE) begin
-        @(posedge clk)
-        data_i = $urandom_range(65535,0);
-        vl_i = 1;
+        repeat(FFT_SIZE-1) begin
+            @(posedge clk);
+            data_i = data_i + 1;//$urandom_range(65535,0);
+            vl_i = 1;
         end
+        @(posedge clk);
+        data_i = data_i + 1;//$urandom_range(65535,0);
+        vl_i = 1;
         last_i = 1;
+        @(posedge clk);
         vl_i = 0;
-        EN = 0;
-        #10
         last_i = 0;
+        EN = 1;
+      #100000
+        EN = 0;
+        data_i = 0;
+      #100000
+        EN = 1;
+        repeat(FFT_SIZE-1) begin
+            @(posedge clk);
+            data_i = data_i + 1;//$urandom_range(65535,0);
+            vl_i = 1;
+        end
+        @(posedge clk);
+        data_i = data_i + 1;//$urandom_range(65535,0);
+        vl_i = 1;
+        last_i = 1;
+        @(posedge clk);
+        vl_i = 0;
+        last_i = 0;
+        EN = 1;
+      #100000
+        EN = 0;
+        data_i = 0;
+      #100000
+        @(posedge clk);    
     end
 
 endmodule

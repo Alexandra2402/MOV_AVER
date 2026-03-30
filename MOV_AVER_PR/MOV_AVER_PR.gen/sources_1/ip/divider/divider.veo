@@ -47,7 +47,7 @@
 // DO NOT MODIFY THIS FILE.
 
 // IP VLNV: xilinx.com:ip:div_gen:5.1
-// IP Revision: 20
+// IP Revision: 23
 
 // The following must be inserted into your Verilog file for this
 // core to be instantiated. Change the instance name and port connections
@@ -57,15 +57,13 @@
 divider your_instance_name (
   .aclk(aclk),                                      // input wire aclk
   .s_axis_divisor_tvalid(s_axis_divisor_tvalid),    // input wire s_axis_divisor_tvalid
-  .s_axis_divisor_tready(s_axis_divisor_tready),    // output wire s_axis_divisor_tready
   .s_axis_divisor_tdata(s_axis_divisor_tdata),      // input wire [7 : 0] s_axis_divisor_tdata
   .s_axis_dividend_tvalid(s_axis_dividend_tvalid),  // input wire s_axis_dividend_tvalid
-  .s_axis_dividend_tready(s_axis_dividend_tready),  // output wire s_axis_dividend_tready
   .s_axis_dividend_tlast(s_axis_dividend_tlast),    // input wire s_axis_dividend_tlast
-  .s_axis_dividend_tdata(s_axis_dividend_tdata),    // input wire [31 : 0] s_axis_dividend_tdata
+  .s_axis_dividend_tdata(s_axis_dividend_tdata),    // input wire [39 : 0] s_axis_dividend_tdata
   .m_axis_dout_tvalid(m_axis_dout_tvalid),          // output wire m_axis_dout_tvalid
   .m_axis_dout_tlast(m_axis_dout_tlast),            // output wire m_axis_dout_tlast
-  .m_axis_dout_tdata(m_axis_dout_tdata)            // output wire [31 : 0] m_axis_dout_tdata
+  .m_axis_dout_tdata(m_axis_dout_tdata)            // output wire [47 : 0] m_axis_dout_tdata
 );
 // INST_TAG_END ------ End INSTANTIATION Template ---------
 

@@ -47,35 +47,33 @@
 -- DO NOT MODIFY THIS FILE.
 
 -- IP VLNV: xilinx.com:ip:div_gen:5.1
--- IP Revision: 20
+-- IP Revision: 23
 
 LIBRARY ieee;
 USE ieee.std_logic_1164.ALL;
 USE ieee.numeric_std.ALL;
 
-LIBRARY div_gen_v5_1_20;
-USE div_gen_v5_1_20.div_gen_v5_1_20;
+LIBRARY div_gen_v5_1_23;
+USE div_gen_v5_1_23.div_gen_v5_1_23;
 
 ENTITY divider IS
   PORT (
     aclk : IN STD_LOGIC;
     s_axis_divisor_tvalid : IN STD_LOGIC;
-    s_axis_divisor_tready : OUT STD_LOGIC;
     s_axis_divisor_tdata : IN STD_LOGIC_VECTOR(7 DOWNTO 0);
     s_axis_dividend_tvalid : IN STD_LOGIC;
-    s_axis_dividend_tready : OUT STD_LOGIC;
     s_axis_dividend_tlast : IN STD_LOGIC;
-    s_axis_dividend_tdata : IN STD_LOGIC_VECTOR(31 DOWNTO 0);
+    s_axis_dividend_tdata : IN STD_LOGIC_VECTOR(39 DOWNTO 0);
     m_axis_dout_tvalid : OUT STD_LOGIC;
     m_axis_dout_tlast : OUT STD_LOGIC;
-    m_axis_dout_tdata : OUT STD_LOGIC_VECTOR(31 DOWNTO 0)
+    m_axis_dout_tdata : OUT STD_LOGIC_VECTOR(47 DOWNTO 0)
   );
 END divider;
 
 ARCHITECTURE divider_arch OF divider IS
   ATTRIBUTE DowngradeIPIdentifiedWarnings : STRING;
   ATTRIBUTE DowngradeIPIdentifiedWarnings OF divider_arch: ARCHITECTURE IS "yes";
-  COMPONENT div_gen_v5_1_20 IS
+  COMPONENT div_gen_v5_1_23 IS
     GENERIC (
       C_XDEVICEFAMILY : STRING;
       C_HAS_ARESETN : INTEGER;
@@ -115,45 +113,48 @@ ARCHITECTURE divider_arch OF divider IS
       s_axis_dividend_tready : OUT STD_LOGIC;
       s_axis_dividend_tuser : IN STD_LOGIC_VECTOR(0 DOWNTO 0);
       s_axis_dividend_tlast : IN STD_LOGIC;
-      s_axis_dividend_tdata : IN STD_LOGIC_VECTOR(31 DOWNTO 0);
+      s_axis_dividend_tdata : IN STD_LOGIC_VECTOR(39 DOWNTO 0);
       m_axis_dout_tvalid : OUT STD_LOGIC;
       m_axis_dout_tready : IN STD_LOGIC;
       m_axis_dout_tuser : OUT STD_LOGIC_VECTOR(0 DOWNTO 0);
       m_axis_dout_tlast : OUT STD_LOGIC;
-      m_axis_dout_tdata : OUT STD_LOGIC_VECTOR(31 DOWNTO 0)
+      m_axis_dout_tdata : OUT STD_LOGIC_VECTOR(47 DOWNTO 0)
     );
-  END COMPONENT div_gen_v5_1_20;
+  END COMPONENT div_gen_v5_1_23;
   ATTRIBUTE X_INTERFACE_INFO : STRING;
+  ATTRIBUTE X_INTERFACE_MODE : STRING;
   ATTRIBUTE X_INTERFACE_PARAMETER : STRING;
-  ATTRIBUTE X_INTERFACE_PARAMETER OF aclk: SIGNAL IS "XIL_INTERFACENAME aclk_intf, ASSOCIATED_BUSIF S_AXIS_DIVIDEND:S_AXIS_DIVISOR:M_AXIS_DOUT, ASSOCIATED_RESET aresetn, ASSOCIATED_CLKEN aclken, FREQ_HZ 1000000, FREQ_TOLERANCE_HZ 0, PHASE 0.0, INSERT_VIP 0";
   ATTRIBUTE X_INTERFACE_INFO OF aclk: SIGNAL IS "xilinx.com:signal:clock:1.0 aclk_intf CLK";
+  ATTRIBUTE X_INTERFACE_MODE OF aclk: SIGNAL IS "slave aclk_intf";
+  ATTRIBUTE X_INTERFACE_PARAMETER OF aclk: SIGNAL IS "XIL_INTERFACENAME aclk_intf, ASSOCIATED_BUSIF S_AXIS_DIVIDEND:S_AXIS_DIVISOR:M_AXIS_DOUT, ASSOCIATED_RESET aresetn, ASSOCIATED_CLKEN aclken, FREQ_HZ 1000000, FREQ_TOLERANCE_HZ 0, PHASE 0.0, INSERT_VIP 0";
   ATTRIBUTE X_INTERFACE_INFO OF m_axis_dout_tdata: SIGNAL IS "xilinx.com:interface:axis:1.0 M_AXIS_DOUT TDATA";
   ATTRIBUTE X_INTERFACE_INFO OF m_axis_dout_tlast: SIGNAL IS "xilinx.com:interface:axis:1.0 M_AXIS_DOUT TLAST";
-  ATTRIBUTE X_INTERFACE_PARAMETER OF m_axis_dout_tvalid: SIGNAL IS "XIL_INTERFACENAME M_AXIS_DOUT, TDATA_NUM_BYTES 4, TDEST_WIDTH 0, TID_WIDTH 0, TUSER_WIDTH 0, HAS_TREADY 0, HAS_TSTRB 0, HAS_TKEEP 0, HAS_TLAST 1, FREQ_HZ 100000000, PHASE 0.0, LAYERED_METADATA undef, INSERT_VIP 0";
   ATTRIBUTE X_INTERFACE_INFO OF m_axis_dout_tvalid: SIGNAL IS "xilinx.com:interface:axis:1.0 M_AXIS_DOUT TVALID";
+  ATTRIBUTE X_INTERFACE_MODE OF m_axis_dout_tvalid: SIGNAL IS "master M_AXIS_DOUT";
+  ATTRIBUTE X_INTERFACE_PARAMETER OF m_axis_dout_tvalid: SIGNAL IS "XIL_INTERFACENAME M_AXIS_DOUT, TDATA_NUM_BYTES 6, TDEST_WIDTH 0, TID_WIDTH 0, TUSER_WIDTH 0, HAS_TREADY 0, HAS_TSTRB 0, HAS_TKEEP 0, HAS_TLAST 1, FREQ_HZ 100000000, PHASE 0.0, LAYERED_METADATA undef, INSERT_VIP 0";
   ATTRIBUTE X_INTERFACE_INFO OF s_axis_dividend_tdata: SIGNAL IS "xilinx.com:interface:axis:1.0 S_AXIS_DIVIDEND TDATA";
   ATTRIBUTE X_INTERFACE_INFO OF s_axis_dividend_tlast: SIGNAL IS "xilinx.com:interface:axis:1.0 S_AXIS_DIVIDEND TLAST";
-  ATTRIBUTE X_INTERFACE_INFO OF s_axis_dividend_tready: SIGNAL IS "xilinx.com:interface:axis:1.0 S_AXIS_DIVIDEND TREADY";
-  ATTRIBUTE X_INTERFACE_PARAMETER OF s_axis_dividend_tvalid: SIGNAL IS "XIL_INTERFACENAME S_AXIS_DIVIDEND, TDATA_NUM_BYTES 4, TDEST_WIDTH 0, TID_WIDTH 0, TUSER_WIDTH 0, HAS_TREADY 1, HAS_TSTRB 0, HAS_TKEEP 0, HAS_TLAST 1, FREQ_HZ 100000000, PHASE 0.0, LAYERED_METADATA undef, INSERT_VIP 0";
   ATTRIBUTE X_INTERFACE_INFO OF s_axis_dividend_tvalid: SIGNAL IS "xilinx.com:interface:axis:1.0 S_AXIS_DIVIDEND TVALID";
+  ATTRIBUTE X_INTERFACE_MODE OF s_axis_dividend_tvalid: SIGNAL IS "slave S_AXIS_DIVIDEND";
+  ATTRIBUTE X_INTERFACE_PARAMETER OF s_axis_dividend_tvalid: SIGNAL IS "XIL_INTERFACENAME S_AXIS_DIVIDEND, TDATA_NUM_BYTES 5, TDEST_WIDTH 0, TID_WIDTH 0, TUSER_WIDTH 0, HAS_TREADY 0, HAS_TSTRB 0, HAS_TKEEP 0, HAS_TLAST 1, FREQ_HZ 100000000, PHASE 0.0, LAYERED_METADATA undef, INSERT_VIP 0";
   ATTRIBUTE X_INTERFACE_INFO OF s_axis_divisor_tdata: SIGNAL IS "xilinx.com:interface:axis:1.0 S_AXIS_DIVISOR TDATA";
-  ATTRIBUTE X_INTERFACE_INFO OF s_axis_divisor_tready: SIGNAL IS "xilinx.com:interface:axis:1.0 S_AXIS_DIVISOR TREADY";
-  ATTRIBUTE X_INTERFACE_PARAMETER OF s_axis_divisor_tvalid: SIGNAL IS "XIL_INTERFACENAME S_AXIS_DIVISOR, TDATA_NUM_BYTES 1, TDEST_WIDTH 0, TID_WIDTH 0, TUSER_WIDTH 0, HAS_TREADY 1, HAS_TSTRB 0, HAS_TKEEP 0, HAS_TLAST 0, FREQ_HZ 100000000, PHASE 0.0, LAYERED_METADATA undef, INSERT_VIP 0";
   ATTRIBUTE X_INTERFACE_INFO OF s_axis_divisor_tvalid: SIGNAL IS "xilinx.com:interface:axis:1.0 S_AXIS_DIVISOR TVALID";
+  ATTRIBUTE X_INTERFACE_MODE OF s_axis_divisor_tvalid: SIGNAL IS "slave S_AXIS_DIVISOR";
+  ATTRIBUTE X_INTERFACE_PARAMETER OF s_axis_divisor_tvalid: SIGNAL IS "XIL_INTERFACENAME S_AXIS_DIVISOR, TDATA_NUM_BYTES 1, TDEST_WIDTH 0, TID_WIDTH 0, TUSER_WIDTH 0, HAS_TREADY 0, HAS_TSTRB 0, HAS_TKEEP 0, HAS_TLAST 0, FREQ_HZ 100000000, PHASE 0.0, LAYERED_METADATA undef, INSERT_VIP 0";
 BEGIN
-  U0 : div_gen_v5_1_20
+  U0 : div_gen_v5_1_23
     GENERIC MAP (
       C_XDEVICEFAMILY => "zynquplus",
       C_HAS_ARESETN => 0,
       C_HAS_ACLKEN => 0,
-      C_LATENCY => 24,
-      ALGORITHM_TYPE => 3,
+      C_LATENCY => 44,
+      ALGORITHM_TYPE => 1,
       DIVISOR_WIDTH => 8,
-      DIVIDEND_WIDTH => 32,
-      SIGNED_B => 1,
+      DIVIDEND_WIDTH => 40,
+      SIGNED_B => 0,
       DIVCLK_SEL => 1,
       FRACTIONAL_B => 1,
-      FRACTIONAL_WIDTH => 0,
+      FRACTIONAL_WIDTH => 2,
       C_HAS_DIV_BY_ZERO => 0,
       C_THROTTLE_SCHEME => 3,
       C_TLAST_RESOLUTION => 1,
@@ -163,9 +164,9 @@ BEGIN
       C_S_AXIS_DIVISOR_TUSER_WIDTH => 1,
       C_HAS_S_AXIS_DIVIDEND_TUSER => 0,
       C_HAS_S_AXIS_DIVIDEND_TLAST => 1,
-      C_S_AXIS_DIVIDEND_TDATA_WIDTH => 32,
+      C_S_AXIS_DIVIDEND_TDATA_WIDTH => 40,
       C_S_AXIS_DIVIDEND_TUSER_WIDTH => 1,
-      C_M_AXIS_DOUT_TDATA_WIDTH => 32,
+      C_M_AXIS_DOUT_TDATA_WIDTH => 48,
       C_M_AXIS_DOUT_TUSER_WIDTH => 1
     )
     PORT MAP (
@@ -173,12 +174,10 @@ BEGIN
       aclken => '1',
       aresetn => '1',
       s_axis_divisor_tvalid => s_axis_divisor_tvalid,
-      s_axis_divisor_tready => s_axis_divisor_tready,
       s_axis_divisor_tuser => STD_LOGIC_VECTOR(TO_UNSIGNED(0, 1)),
       s_axis_divisor_tlast => '0',
       s_axis_divisor_tdata => s_axis_divisor_tdata,
       s_axis_dividend_tvalid => s_axis_dividend_tvalid,
-      s_axis_dividend_tready => s_axis_dividend_tready,
       s_axis_dividend_tuser => STD_LOGIC_VECTOR(TO_UNSIGNED(0, 1)),
       s_axis_dividend_tlast => s_axis_dividend_tlast,
       s_axis_dividend_tdata => s_axis_dividend_tdata,
